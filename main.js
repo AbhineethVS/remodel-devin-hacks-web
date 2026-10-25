@@ -43,25 +43,29 @@ const pairs = {
     before: "media/github-before.png",
     after: "media/github-after-cyberpunk.png",
     mode: "Reskin",
-    caption: "<b>GitHub, “cyberpunk / futuristic”.</b> Reskin: the layout stays the same, and the colours, fonts and shapes change.",
+    beforeAlt: "GitHub before reskin, the original profile page",
+    afterAlt: "GitHub after a cyberpunk reskin: same layout, with neon pink borders and type",
   },
   wikipedia: {
     before: "media/apple-wikipedia-before.png",
     after: "media/apple-wikipedia-after.png",
     mode: "Rebuild",
-    caption: "<b>Wikipedia’s Apple Inc. article, rebuilt.</b> The whole page gets a new layout, in a clean Apple-keynote style.",
+    beforeAlt: "Wikipedia's Apple article before, the standard article layout",
+    afterAlt: "Wikipedia's Apple article rebuilt in a clean Apple-keynote layout",
   },
   hackernews: {
     before: "media/hackernews-before.png",
     after: "media/hackernews-after-windows95.png",
     mode: "Rebuild",
-    caption: "<b>Hacker News, as a retro desktop.</b> The same live stories, inside a 90s-style computer window.",
+    beforeAlt: "Hacker News before, the original list of stories",
+    afterAlt: "Hacker News rebuilt as a 90s-style computer window",
   },
   irctc: {
     before: "media/irctc-before.png",
     after: "media/irctc-after-japanese-rail.png",
     mode: "Rebuild",
-    caption: "<b>IRCTC train search, as a calm Japanese rail planner.</b> It still fills in IRCTC’s real form, so searching shows real trains. The AI checked its own screenshot and fixed a mistake before this shot.",
+    beforeAlt: "IRCTC train search before, the original booking page",
+    afterAlt: "IRCTC train search rebuilt as a calm Japanese rail planner, with the booking form beside a departures board",
   },
 };
 Object.values(pairs).forEach(({ before, after }) => { new Image().src = before; new Image().src = after; });
@@ -70,9 +74,8 @@ const box = document.getElementById("compareBox");
 const range = document.getElementById("cmpRange");
 const imgBefore = document.getElementById("cmpBefore");
 const imgAfter = document.getElementById("cmpAfter");
-const caption = document.getElementById("cmpCaption");
+const captions = document.querySelectorAll("[data-caption]");
 const modeLabel = document.getElementById("cmpMode");
-caption.innerHTML = pairs.github.caption;
 
 range.addEventListener("input", () => box.style.setProperty("--pos", range.value + "%"));
 
@@ -93,7 +96,9 @@ document.querySelectorAll(".tab").forEach((tab) => {
     setTimeout(() => {
       imgBefore.src = pair.before;
       imgAfter.src = pair.after;
-      caption.innerHTML = pair.caption;
+      imgBefore.alt = pair.beforeAlt;
+      imgAfter.alt = pair.afterAlt;
+      captions.forEach((p) => { p.hidden = p.dataset.caption !== tab.dataset.pair; });
       modeLabel.textContent = pair.mode;
       range.value = 50;
       box.style.setProperty("--pos", "50%");

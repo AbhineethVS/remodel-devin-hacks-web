@@ -221,6 +221,7 @@ h2 { font-size: clamp(30px, 4.2vw, 48px); font-weight: 600; letter-spacing: -.04
 .compare__range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
 .compare.is-swapping .compare__img { opacity: 0; }
 .panel__caption { padding: 14px 8px 8px; color: var(--muted); font-size: 14px; }
+.panel__caption p { margin: 0; }
 .panel__caption b { color: var(--text); font-weight: 500; }
 
 /* Demos */
@@ -389,6 +390,7 @@ h2 { font-size: clamp(30px, 4.2vw, 48px); font-weight: 600; letter-spacing: -.04
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   padding: 20px 0 32px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted);
 }
+.footer__links { display: flex; gap: 18px; }
 .footer__row a:hover { color: var(--text); }
 
 /* Modal */

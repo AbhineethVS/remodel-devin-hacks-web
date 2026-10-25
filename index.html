@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Remodel: give any website a new look with one sentence</title>
   <meta name="description" content="Remodel is a Chrome extension that redesigns any website from a single prompt, while the site keeps working.">
+  <link rel="alternate" type="text/plain" href="llms.txt" title="Plain-text summary for AI readers">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Remodel",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "description": "Give any website a new look with one sentence. A Chrome extension that redesigns a page from a prompt while links, search and forms keep working.",
+    "codeRepository": "https://github.com/AbhineethVS/devin-hacks",
+    "sameAs": "https://github.com/AbhineethVS/remodel-devin-hacks-web"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -94,9 +107,9 @@
         </div>
 
         <div class="compare" id="compareBox">
-          <img class="compare__img" id="cmpAfter" src="media/github-after-cyberpunk.png" alt="After">
+          <img class="compare__img" id="cmpAfter" src="media/github-after-cyberpunk.png" alt="GitHub after a cyberpunk reskin: same layout, with neon pink borders and type">
           <div class="compare__before">
-            <img class="compare__img" id="cmpBefore" src="media/github-before.png" alt="Before">
+            <img class="compare__img" id="cmpBefore" src="media/github-before.png" alt="GitHub before reskin, the original profile page">
           </div>
           <div class="compare__handle" aria-hidden="true">
             <span><svg class="i" viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
@@ -105,7 +118,12 @@
           <span class="compare__label compare__label--r">After</span>
           <input class="compare__range" id="cmpRange" type="range" min="0" max="100" value="50" aria-label="Before and after comparison">
         </div>
-        <p class="panel__caption" id="cmpCaption"></p>
+        <div class="panel__caption" id="cmpCaption">
+          <p data-caption="github"><b>GitHub, “cyberpunk / futuristic”.</b> Reskin: the layout stays the same, and the colours, fonts and shapes change.</p>
+          <p data-caption="wikipedia" hidden><b>Wikipedia’s Apple Inc. article, rebuilt.</b> The whole page gets a new layout, in a clean Apple-keynote style.</p>
+          <p data-caption="hackernews" hidden><b>Hacker News, as a retro desktop.</b> The same live stories, inside a 90s-style computer window.</p>
+          <p data-caption="irctc" hidden><b>IRCTC train search, as a calm Japanese rail planner.</b> It still fills in IRCTC’s real form, so searching shows real trains. The AI checked its own screenshot and fixed a mistake before this shot.</p>
+        </div>
       </div>
     </section>
 
@@ -117,28 +135,28 @@
 
       <div class="demos">
         <button class="demo card reveal" data-yt="dNEG0L8O_Oc">
-          <span class="demo__preview"><img src="https://i.ytimg.com/vi/dNEG0L8O_Oc/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span class="demo__preview"><img src="https://i.ytimg.com/vi/dNEG0L8O_Oc/hqdefault.jpg" alt="python.org repainted in loud pink with thick borders" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
           <span class="demo__foot">
             <span class="demo__text"><strong>python.org, pink neo-brutalist</strong><span>Same page, repainted in loud pink with thick borders and heavy type.</span></span>
             <span class="tag">Reskin</span>
           </span>
         </button>
         <button class="demo card reveal" style="--d:.06s" data-yt="Xa5lt1BeMjs">
-          <span class="demo__preview"><img src="https://i.ytimg.com/vi/Xa5lt1BeMjs/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span class="demo__preview"><img src="https://i.ytimg.com/vi/Xa5lt1BeMjs/hqdefault.jpg" alt="GitHub with its colours and type turned neon" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
           <span class="demo__foot">
             <span class="demo__text"><strong>GitHub, neon</strong><span>GitHub stays put. The colours and type turn neon.</span></span>
             <span class="tag">Reskin</span>
           </span>
         </button>
         <button class="demo card reveal" style="--d:.12s" data-yt="PlnK9Iw7WgI">
-          <span class="demo__preview"><img src="https://i.ytimg.com/vi/PlnK9Iw7WgI/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span class="demo__preview"><img src="https://i.ytimg.com/vi/PlnK9Iw7WgI/hqdefault.jpg" alt="Wikipedia's Apple article rebuilt in an Apple-keynote layout" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
           <span class="demo__foot">
             <span class="demo__text"><strong>Wikipedia's Apple article</strong><span>The article gets a new layout, in a clean Apple-keynote style.</span></span>
             <span class="tag tag--b">Rebuild</span>
           </span>
         </button>
         <button class="demo card reveal" style="--d:.18s" data-yt="-1QaEpzxPYg">
-          <span class="demo__preview"><img src="https://i.ytimg.com/vi/-1QaEpzxPYg/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span class="demo__preview"><img src="https://i.ytimg.com/vi/-1QaEpzxPYg/hqdefault.jpg" alt="A page redesigned in a dark neon Cyberpunk 2077 look" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
           <span class="demo__foot">
             <span class="demo__text"><strong>Cyberpunk 2077</strong><span>A page redesigned in a dark, neon Cyberpunk 2077 look.</span></span>
             <span class="tag tag--b">Rebuild</span>
@@ -283,7 +301,10 @@
     <div class="footer__row">
       <span class="nav__brand"><span class="logo" aria-hidden="true"></span>Remodel</span>
       <span class="footer__meta">Built solo overnight, 24–25 October 2026</span>
-      <a href="https://github.com/AbhineethVS/devin-hacks" target="_blank" rel="noopener">github.com/AbhineethVS/devin-hacks</a>
+      <span class="footer__links">
+        <a href="llms.txt">llms.txt</a>
+        <a href="https://github.com/AbhineethVS/devin-hacks" target="_blank" rel="noopener">github.com/AbhineethVS/devin-hacks</a>
+      </span>
     </div>
   </footer>
 
