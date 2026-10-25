@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remodel: give any website a new look with one sentence</title>
+  <meta name="description" content="Remodel is a Chrome extension that redesigns any website from a single prompt, while the site keeps working.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand">
+        <span class="logo" aria-hidden="true"></span>
+        Remodel
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#compare">Before / after</a>
+        <a href="#demos">Demos</a>
+        <a href="#modes">How it works</a>
+        <a href="#try">Install</a>
+      </nav>
+      <div class="nav__actions">
+        <span class="kbd-hint"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>M</kbd></span>
+        <a class="btn btn--primary btn--sm" href="https://github.com/AbhineethVS/devin-hacks" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          Star on GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__frame">
+        <img class="hero__img" src="media/hero.jpg" alt="" fetchpriority="high">
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <div class="hero__bottom">
+          <h1 class="hero__title reveal">Remodel<span class="hero__star">*</span></h1>
+          <div class="hero__side reveal" style="--d:.15s">
+            <p>Give any website a new look with one sentence. Type a style, and Remodel redesigns the page. Links, search and forms keep working.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--light" href="https://github.com/AbhineethVS/devin-hacks" target="_blank" rel="noopener">
+                View the repo
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn--glass" href="#demos">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l11-7z" fill="currentColor" stroke="none"/></svg>
+                Watch demos
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prompt reveal" style="--d:.3s" aria-label="Example prompt">
+        <span class="prompt__icon">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+        </span>
+        <span class="prompt__text"><span id="typed">cyberpunk / futuristic</span><span class="caret"></span></span>
+        <span class="prompt__btn">Reskin this page
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+        </span>
+      </div>
+    </section>
+
+    <section class="chips" aria-hidden="true">
+      <div class="chips__track">
+        <span>neo-brutalist magazine</span><span>Cyberpunk 2077</span><span>Apple keynote</span><span>Windows 95 desktop</span><span>calm Japanese rail planner</span><span>neon terminal</span><span>pink and loud</span>
+        <span>neo-brutalist magazine</span><span>Cyberpunk 2077</span><span>Apple keynote</span><span>Windows 95 desktop</span><span>calm Japanese rail planner</span><span>neon terminal</span><span>pink and loud</span>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Before / after</p>
+        <h2>Same website. <span class="muted">Different world.</span></h2>
+        <p class="lede">Drag the handle to compare. Every after-shot is a real result from the extension, not a mockup.</p>
+      </div>
+
+      <div class="panel reveal">
+        <div class="panel__bar">
+          <div class="seg" role="tablist" aria-label="Examples">
+            <button class="tab is-active" role="tab" aria-selected="true" data-pair="github">GitHub</button>
+            <button class="tab" role="tab" aria-selected="false" data-pair="wikipedia">Wikipedia</button>
+            <button class="tab" role="tab" aria-selected="false" data-pair="hackernews">Hacker News</button>
+            <button class="tab" role="tab" aria-selected="false" data-pair="irctc">IRCTC</button>
+          </div>
+          <span class="panel__mode" id="cmpMode">Reskin</span>
+        </div>
+
+        <div class="compare" id="compareBox">
+          <img class="compare__img" id="cmpAfter" src="media/github-after-cyberpunk.png" alt="After">
+          <div class="compare__before">
+            <img class="compare__img" id="cmpBefore" src="media/github-before.png" alt="Before">
+          </div>
+          <div class="compare__handle" aria-hidden="true">
+            <span><svg class="i" viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          </div>
+          <span class="compare__label compare__label--l">Before</span>
+          <span class="compare__label compare__label--r">After</span>
+          <input class="compare__range" id="cmpRange" type="range" min="0" max="100" value="50" aria-label="Before and after comparison">
+        </div>
+        <p class="panel__caption" id="cmpCaption"></p>
+      </div>
+    </section>
+
+    <section class="section" id="demos">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Demos</p>
+        <h2>Watch it repaint the web. <span class="muted">Four live runs.</span></h2>
+      </div>
+
+      <div class="demos">
+        <button class="demo card reveal" data-yt="dNEG0L8O_Oc">
+          <span class="demo__preview"><img src="https://i.ytimg.com/vi/dNEG0L8O_Oc/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span class="demo__foot">
+            <span class="demo__text"><strong>python.org, pink neo-brutalist</strong><span>Same page, repainted in loud pink with thick borders and heavy type.</span></span>
+            <span class="tag">Reskin</span>
+          </span>
+        </button>
+        <button class="demo card reveal" style="--d:.06s" data-yt="Xa5lt1BeMjs">
+          <span class="demo__preview"><img src="https://i.ytimg.com/vi/Xa5lt1BeMjs/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span class="demo__foot">
+            <span class="demo__text"><strong>GitHub, neon</strong><span>GitHub stays put. The colours and type turn neon.</span></span>
+            <span class="tag">Reskin</span>
+          </span>
+        </button>
+        <button class="demo card reveal" style="--d:.12s" data-yt="PlnK9Iw7WgI">
+          <span class="demo__preview"><img src="https://i.ytimg.com/vi/PlnK9Iw7WgI/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span class="demo__foot">
+            <span class="demo__text"><strong>Wikipedia's Apple article</strong><span>The article gets a new layout, in a clean Apple-keynote style.</span></span>
+            <span class="tag tag--b">Rebuild</span>
+          </span>
+        </button>
+        <button class="demo card reveal" style="--d:.18s" data-yt="-1QaEpzxPYg">
+          <span class="demo__preview"><img src="https://i.ytimg.com/vi/-1QaEpzxPYg/hqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span class="demo__foot">
+            <span class="demo__text"><strong>Cyberpunk 2077</strong><span>A page redesigned in a dark, neon Cyberpunk 2077 look.</span></span>
+            <span class="tag tag--b">Rebuild</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="modes">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>How it works</p>
+        <h2>Two ways to remodel. <span class="muted">Pick by how far you want to go.</span></h2>
+      </div>
+
+      <div class="modes">
+        <article class="mode card reveal">
+          <div class="mode__preview mode__preview--reskin" aria-hidden="true">
+            <div class="mini">
+              <div class="mini__bar"><i></i><i></i><i></i></div>
+              <div class="mini__body">
+                <div class="sk sk--title"></div>
+                <div class="sk sk--line"></div>
+                <div class="sk sk--line short"></div>
+                <div class="mini__row">
+                  <div class="sk sk--card"></div><div class="sk sk--card"></div><div class="sk sk--card"></div>
+                </div>
+                <div class="sk sk--btn"></div>
+              </div>
+            </div>
+            <div class="swatches"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="mode__body">
+            <div class="mode__head">
+              <h3>Reskin</h3>
+              <span class="tag">Most websites</span>
+            </div>
+            <p>Keeps the page exactly where it is and repaints it with new colours, fonts, rounded or sharp corners, and shadows. One model call returns a small theme, and a deterministic engine applies it.</p>
+          </div>
+          <dl class="stats">
+            <div><dt>Time to apply</dt><dd>~10s</dd></div>
+            <div><dt>Layout shift, same fonts</dt><dd>0 px</dd></div>
+            <div><dt>Reuse on other sites</dt><dd>Instant</dd></div>
+          </dl>
+        </article>
+
+        <article class="mode card reveal" style="--d:.08s">
+          <div class="mode__preview mode__preview--rebuild" aria-hidden="true">
+            <div class="mini">
+              <div class="mini__bar"><i></i><i></i><i></i></div>
+              <div class="mini__stage">
+                <div class="blk blk--1"></div>
+                <div class="blk blk--2"></div>
+                <div class="blk blk--3"></div>
+                <div class="blk blk--4"></div>
+              </div>
+            </div>
+            <div class="review"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>AI review passed</div>
+          </div>
+          <div class="mode__body">
+            <div class="mode__head">
+              <h3>Rebuild</h3>
+              <span class="tag tag--b">Wikipedia · HN · IRCTC</span>
+            </div>
+            <p>Designs a brand-new page from the content, with its own layout and scroll animations. The AI-written renderer runs in a sandbox with no extension access, then the AI reviews a screenshot of its own result.</p>
+          </div>
+          <dl class="stats">
+            <div><dt>Layout</dt><dd>New</dd></div>
+            <div><dt>IRCTC search</dt><dd>Real trains</dd></div>
+            <div><dt>Self-check</dt><dd>Built in</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="features">
+        <div class="feature card reveal">
+          <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5M9 18h6M10 22h4"/></svg></span>
+          <div><h4>Suggest prompts</h4><p>Not sure what to type? Remodel looks at the page and suggests three styles.</p></div>
+        </div>
+        <div class="feature card reveal" style="--d:.04s">
+          <span class="ico"><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></span>
+          <div><h4>Reuse a style</h4><p>A style you made on one site applies instantly on another.</p></div>
+        </div>
+        <div class="feature card reveal" style="--d:.08s">
+          <span class="ico ico--kbd">Alt+R</span>
+          <div><h4>Before / after switch</h4><p>Flip between the original and the new design in one keystroke.</p></div>
+        </div>
+        <div class="feature card reveal" style="--d:.12s">
+          <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+          <div><h4>Remix a section</h4><p>On Wikipedia, hover over any section and restyle just that part.</p></div>
+        </div>
+        <div class="feature card reveal" style="--d:.16s">
+          <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 4l7 17 2.5-7.5L21 11z"/></svg></span>
+          <div><h4>Watch it work</h4><p>Five little cursors visibly edit the page while it designs: retyping headings, moving blocks, picking colours.</p></div>
+        </div>
+        <div class="feature card reveal" style="--d:.2s">
+          <span class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+          <div><h4>Self-check</h4><p>After a rebuild, the AI looks at a screenshot of its result and fixes obvious mistakes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="try">
+      <div class="section__head reveal">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Install</p>
+        <h2>Running in a minute. <span class="muted">Your key stays in your browser.</span></h2>
+      </div>
+
+      <div class="try reveal">
+        <ol class="steps card">
+          <li><span class="num">1</span><div>Open <code>chrome://extensions</code> and turn on <b>Developer mode</b>.</div></li>
+          <li><span class="num">2</span><div>Click <b>Load unpacked</b> and choose the <code>extension</code> folder.</div></li>
+          <li><span class="num">3</span><div>Open any website and click <b>Remodel</b> in the bottom-right, or press <code>Alt+Shift+M</code>.</div></li>
+          <li><span class="num">4</span><div>Paste your OpenAI API key.</div></li>
+          <li><span class="num">5</span><div>Type a style and press <b>Reskin this page</b>, or <b>Remodel this page</b> on supported sites.</div></li>
+        </ol>
+
+        <div class="try__side">
+          <a class="repo card" href="https://github.com/AbhineethVS/devin-hacks" target="_blank" rel="noopener">
+            <span class="repo__top">
+              <svg class="i i--lg" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" stroke="none" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              <svg class="i repo__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
+            <span class="repo__name">AbhineethVS / devin-hacks</span>
+            <span class="repo__desc">Source, setup notes, change log and technical contracts.</span>
+          </a>
+
+          <div class="notes card">
+            <h4>Good to know</h4>
+            <ul>
+              <li>Pictures and logos keep their original colours, so a logo drawn for a light background can look off on a dark skin.</li>
+              <li>On IRCTC, Remodel stops at train search. Login, booking and payment happen on the real IRCTC site.</li>
+              <li>New fonts are metric-matched, but a line can occasionally re-wrap.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true">Remodel<span class="hero__star">*</span></div>
+    <div class="footer__row">
+      <span class="nav__brand"><span class="logo" aria-hidden="true"></span>Remodel</span>
+      <span class="footer__meta">Built solo overnight, 24–25 October 2026</span>
+      <a href="https://github.com/AbhineethVS/devin-hacks" target="_blank" rel="noopener">github.com/AbhineethVS/devin-hacks</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-label="Demo video">
+      <button class="modal__close" data-close aria-label="Close">
+        <svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal__video" id="modalVideo"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
